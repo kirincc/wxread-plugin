@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "WeRead Enhancement",
+  "version": "1.0.0",
+  "description": "为微信读书提供更好的阅读体验",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_icon": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.weread.qq.com/*"],
+      "js": ["content/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
